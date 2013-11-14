@@ -7,9 +7,13 @@ and open the template in the editor.
     <head>
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/app.css" />
     </head>
     <body>
         <div id="appContainer">
+            <div id="header">
+                <h1>Contact Management Application.</h1>
+            </div>
             <div id="contactForm">
                 <label for="contactName">Name</label><input type="text" value="" id="contactName"/>
                 <label for="contactEmail">Email</label><input type="text" value="" id="contactEmail"/>
@@ -18,6 +22,10 @@ and open the template in the editor.
             <div id="listContainer">
             </div>
             <div id="contactDetailContainer"></div>
+            <div class="clear"></div>
+            <div id="footer">
+                javascript mvc sample
+            </div>
         </div>
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
         <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
@@ -29,13 +37,18 @@ and open the template in the editor.
 
         <script type="text/template" id="contact-template">
             <div class="contactListItem">
-                <div>Name:<%= name %><a href="#" class="delContact">del</a></div>
+                <div class="contactListItemContent">Name:<%= name %></div>
+                <div class="controlBar"><a href="#" class="delContact">del</a></div>
             </div>
         </script>
         <script type="text/template" id="contact-detail-template">
             <div>
                 <div>Name:<%= name %></div>
                 <div>Email:<%= email %></div>
+                <div class="controlBar">
+                    <a href="#" class="addContact">add</a>
+                    <a href="#" class="editContact">edit</a>
+                </div>
             </div>
         </script>
 

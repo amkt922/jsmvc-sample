@@ -1,0 +1,78 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2013/11/14, 14:14:27
+    Author     : p
+*/
+@mixin column {
+    float: left;
+}
+
+@mixin logo {
+    background-color: #ffccff;
+}
+
+@mixin appcolumn {
+    width: 800px;
+    margin: auto;
+}
+
+@mixin sidecolumn {
+    @include column;
+    width: 150px;
+    background: #ffccff;
+}
+
+@mixin detailcolumn {
+    @include column;
+    width: 600px;
+}
+
+@mixin clear {
+    clear: both;
+}
+
+@mixin controlbar {
+    padding: 5px;
+    text-align: right;
+}
+
+body {
+    @include appcolumn;
+    .controlBar {
+        @include controlbar;
+    }
+
+    #appContainer {
+        #header {
+            @include logo;
+        }
+        #listContainer {
+            @include column;
+            @include sidecolumn;
+            .contactListItem {
+                .contactListItemContent {
+                    padding: 5px;
+                }
+            }
+        }
+        #contactDetailContainer {
+            @include column;
+            @include detailcolumn;
+            padding: 20px;
+        }
+        @include appcolumn;
+        .clear {
+            @include clear;
+        }
+        #footer {
+            text-align: center;
+        }
+    }
+}
+
+
+
